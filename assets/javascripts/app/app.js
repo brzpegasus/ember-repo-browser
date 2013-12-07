@@ -1,7 +1,8 @@
 define([
   'ember',
   'app/resolver',
-  'app/router'
+  'app/router',
+  'app/routes/index_route'
 ], function(Ember, Resolver, Router) {
 
   // Log all the things!
@@ -12,7 +13,8 @@ define([
     LOG_TRANSITIONS_INTERNAL: true,
     LOG_VIEW_LOOKUPS: true,
     Router: Router,
-    Resolver: Resolver
+    Resolver: Resolver,
+    modulePrefix: 'app'
   });
 
   return App;

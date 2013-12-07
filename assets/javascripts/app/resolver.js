@@ -1,7 +1,6 @@
 define([
   'ember',
-  'templates',
-  'app/routes/index_route'
+  'templates'
 ], function(Ember, templates) {
 
   var get = Ember.get,
@@ -42,7 +41,7 @@ define([
         // Synchronously require the module. The module must already be loaded,
         // or the call will throw an error:
         // https://github.com/amdjs/amdjs-api/wiki/require#requirestring-
-        moduleName = 'app/' + parsedName.type + 's/' + decamelize(className);
+        moduleName = this.namespace.modulePrefix + '/' + parsedName.type + 's/' + decamelize(className);
         if (moduleRegistry[moduleName]) {
           try {
             factory = require(moduleName);

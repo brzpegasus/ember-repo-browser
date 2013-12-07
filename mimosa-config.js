@@ -16,7 +16,8 @@ exports.config = {
 
   server: {
     defaultServer: {
-      enabled: true
+      enabled: true,
+      onePager: true
     },
     views: {
       compileWith: 'handlebars',

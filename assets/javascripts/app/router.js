@@ -5,7 +5,9 @@ define(['ember'], function(Ember) {
   });
 
   Router.map(function() {
-    this.route('browser');
+    this.resource('browser', { path: '/repos' }, function() {
+      this.resource('repositories', { path: ':name' });
+    });
   });
 
   return Router;

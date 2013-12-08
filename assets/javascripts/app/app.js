@@ -2,7 +2,11 @@ define([
   'ember',
   'app/resolver',
   'app/router',
-  'app/routes/index_route'
+  'app/routes/index_route',
+  'app/routes/repositories_route',
+  'app/controllers/browser_controller',
+  'app/controllers/repositories_controller',
+  'app/components/search_field_component'
 ], function(Ember, Resolver, Router) {
 
   // Log all the things!

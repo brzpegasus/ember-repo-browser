@@ -1,3 +1,6 @@
+/*
+  RequireJS configuration.
+*/
 requirejs.config({
   urlArgs: 'b=' + ((new Date()).getTime()),
   shim: {
@@ -13,6 +16,18 @@ requirejs.config({
   }
 });
 
-require(['app/app'], function(App) {
-  App.create();
+/*
+  Application entry point.
+*/
+require([
+  'app/app',
+  'app/deps'
+], function(App, dependencies) {
+
+  require(dependencies, function() {
+    // Create an instance of the Ember app and expose it globally, mostly because
+    // it's convenient at runtime for looking things up through the console, e.g.:
+    // `App.__container__.lookup('model:foo')`
+    window.App = App.create();
+  });
 });

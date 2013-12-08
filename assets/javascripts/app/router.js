@@ -1,5 +1,9 @@
+/**
+  Ember application routes.
+*/
 define(['ember'], function(Ember) {
 
+  // Use the history API instead of relying on hashchange
   var Router = Ember.Router.extend({
     location: 'history'
   });

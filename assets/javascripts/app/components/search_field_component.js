@@ -1,9 +1,12 @@
+/**
+  Search Field Component.
+
+  A simple search input field and submit button.
+*/
 define(['ember'], function(Ember) {
 
   var SearchFieldComponent = Ember.Component.extend({
-
     tagName: 'form',
-
     classNames: ['navbar-form'],
 
     didInsertElement: function() {
@@ -15,8 +18,8 @@ define(['ember'], function(Ember) {
         var value = this.get('value');
         if (value) {
           this.sendAction('submit', value);
+          this.$('input').blur();
         }
-        this.$('input').blur();
       }
     }
   });

@@ -25,6 +25,16 @@ define([
       return resolvedTemplate;
     },
 
+    parseName: function(fullName) {
+      var parsedName = this._super(fullName);
+      if (parsedName.type === 'model') {
+        parsedName.suffix = '';
+      } else {
+        parsedName.suffix = parsedName.type;
+      }
+      return parsedName;
+    },
+
     /**
       Look up the factory object specified by parsedName in the list of
       loaded AMD modules (via require).
@@ -34,7 +44,7 @@ define([
     */
     resolveOther: function(parsedName) {
       var moduleName,
-          className = classify(parsedName.name) + classify(parsedName.type),
+          className = classify(parsedName.name) + classify(parsedName.suffix),
           factory = get(parsedName.root, className);
 
       if (!factory) {

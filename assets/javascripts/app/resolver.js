@@ -60,7 +60,7 @@ define([
         // or the call will throw an error:
         // https://github.com/amdjs/amdjs-api/wiki/require#requirestring-
         moduleName = modulePrefix + parsedName.type + 's/' + decamelize(className);
-        if (deps.some(function(d) {return moduleName === d;})) {
+        if (deps.contains(moduleName)) {
           try {
             factory = require(moduleName);
           } catch (e) {

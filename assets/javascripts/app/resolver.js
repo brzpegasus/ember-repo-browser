@@ -14,7 +14,8 @@ define([
 
   var get = Ember.get,
       decamelize = Ember.String.decamelize,
-      classify = Ember.String.classify;
+      classify = Ember.String.classify,
+      indexOf = Ember.ArrayPolyfills.indexOf;
 
   var Resolver = Ember.DefaultResolver.extend({
 
@@ -60,7 +61,7 @@ define([
         // or the call will throw an error:
         // https://github.com/amdjs/amdjs-api/wiki/require#requirestring-
         moduleName = modulePrefix + parsedName.type + 's/' + decamelize(className);
-        if (deps.contains(moduleName)) {
+        if (indexOf.call(deps, moduleName) !== -1) {
           try {
             factory = require(moduleName);
           } catch (e) {

@@ -8,13 +8,13 @@
 */
 define([
   'ember',
-  'templates'
-], function(Ember, templates) {
+  'templates',
+  'app/deps'
+], function(Ember, templates, deps) {
 
   var get = Ember.get,
       decamelize = Ember.String.decamelize,
-      classify = Ember.String.classify,
-      moduleRegistry = require.s.contexts._.defined;
+      classify = Ember.String.classify;
 
   var Resolver = Ember.DefaultResolver.extend({
 
@@ -60,7 +60,7 @@ define([
         // or the call will throw an error:
         // https://github.com/amdjs/amdjs-api/wiki/require#requirestring-
         moduleName = modulePrefix + parsedName.type + 's/' + decamelize(className);
-        if (moduleRegistry[moduleName]) {
+        if (deps.some(function(d) {return moduleName === d;})) {
           try {
             factory = require(moduleName);
           } catch (e) {

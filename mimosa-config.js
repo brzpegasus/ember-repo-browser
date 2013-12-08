@@ -14,6 +14,12 @@ exports.config = {
     }
   },
 
+  compilers: {
+    libs: {
+      handlebars: require('handlebars')
+    }
+  },
+
   server: {
     defaultServer: {
       enabled: true,

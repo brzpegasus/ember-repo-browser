@@ -13,12 +13,6 @@ exports.config = {
     'bower'
   ],
 
-  es6Modules: {
-    type: 'amd',
-    exclude: [/[/\\]vendor[/\\]/, /[/\\]main[\.-]/],
-    globals: {}
-  },
-
   jshint: {
     rules: {
       esnext: true

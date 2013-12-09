@@ -4,13 +4,12 @@
   All we're doing here for now is redirect all requests for `/`
   to the `browser` resource (`/repos`) so users can start searching for repos.
 */
-define(['ember'], function(Ember) {
+import Ember from 'ember';
 
-  var IndexRoute = Ember.Route.extend({
-    redirect: function() {
-      this.transitionTo('browser');
-    }
-  });
-
-  return IndexRoute;
+var IndexRoute = Ember.Route.extend({
+  redirect: function() {
+    this.transitionTo('browser');
+  }
 });
+
+export default IndexRoute;

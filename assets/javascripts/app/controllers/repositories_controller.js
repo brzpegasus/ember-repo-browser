@@ -4,11 +4,10 @@
   This is just a simple proxy for all Repository records given
   by the repositories route. Nothing fancy... yet.
 */
-define(['ember'], function(Ember) {
+import Ember from 'ember';
 
-  var RepositoriesController = Ember.ArrayController.extend({
-    // Add filtering/sorting and such here
-  });
-
-  return RepositoriesController;
+var RepositoriesController = Ember.ArrayController.extend({
+  // Add filtering/sorting and such here
 });
+
+export default RepositoriesController;

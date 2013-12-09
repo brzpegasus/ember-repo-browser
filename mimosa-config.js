@@ -1,7 +1,29 @@
 exports.config = {
   minMimosaVersion: '1.2.2',
 
-  modules: ['jshint', 'csslint', 'server', 'require', 'minify-js', 'minify-css', 'live-reload', 'bower'],
+  modules: [
+    'es6-module-transpiler',
+    'jshint',
+    'csslint',
+    'server',
+    'require',
+    'minify-js',
+    'minify-css',
+    'live-reload',
+    'bower'
+  ],
+
+  es6Modules: {
+    type: 'amd',
+    exclude: [/[/\\]vendor[/\\]/, /[/\\]main[\.-]/],
+    globals: {}
+  },
+
+  jshint: {
+    rules: {
+      esnext: true
+    }
+  },
 
   /* Template compilation */
   template: {

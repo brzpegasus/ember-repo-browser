@@ -4,6 +4,14 @@
 requirejs.config({
   urlArgs: 'b=' + ((new Date()).getTime()),
   shim: {
+    'handlebars': {
+      exports: 'Handlebars',
+      init: function() {
+        // Expose Handlebars globally for r.js optimizer
+        // (https://github.com/wycats/handlebars.js/issues/333)
+        window.Handlebars = Handlebars;
+      }
+    },
     'ember': {
       deps: ['handlebars', 'jquery'],
       exports: 'Ember'

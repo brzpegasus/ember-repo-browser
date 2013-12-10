@@ -15,15 +15,14 @@ var get = Ember.get,
     // requirejs
     _isRequireDefined = (require && 'function' === typeof require.defined && require.defined) || function() {},
     // almond (>= 0.2.6 only)
-    _inRequireDefined = (requirejs && requirejs._defined) || {};
+    _inRequireDefined = (requirejs && requirejs._defined) || {},
 
-// Figure whether a module is loaded (should figure out a better to do this)
-var isModuleDefined = function(id) {
-  return _inRequireDefined[id] || _isRequireDefined(id);
-};
+    // Figure out whether a module is loaded (should find a more reliable way to do this)
+    isModuleDefined = function(id) {
+      return _inRequireDefined[id] || _isRequireDefined(id);
+    };
 
 var Resolver = Ember.DefaultResolver.extend({
-
   /**
     Look up the template in Ember.TEMPLATES (the default). If not found there, look in
     the 'templates' dependency object instead.

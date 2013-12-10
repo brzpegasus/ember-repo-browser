@@ -28,4 +28,4 @@ $ npm install
 - `mimosa watch -s` (development)
 - `mimosa watch -os` or `mimosa build` (optimized build)
 
-Launch app at http://localhost:3000/.
+Launch app at `http://localhost:3000/`.

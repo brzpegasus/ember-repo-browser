@@ -1,19 +1,31 @@
 Ember Repository Browser
 ==================
 
-An Ember application for searching and visualizing GitHub repos.
+An Ember application for searching and visualizing GitHub repos (WIP).
 
 This is mostly an experimentation ground for various features:
 
+### Tooling
+
 - [Mimosa](http://mimosa.io) as the dev and build tool
 - RequireJS + ES6 modules via AMD
-- No custom resolver at the moment
+  - files are kept separate for development; rebuilds only what's necessary
+  - almond.js for optimized build
+- Module-aware resolver
+  - no need to attach properties to the global `App` object
+  - modules still need to be loaded up front so the resolver can `require` them synchronously
 
-### To Run
+## Setup
 
 ```bash
 $ npm install -g mimosa
 $ cd ember-repo-browser
 $ npm install
-$ mimosa watch -s
 ```
+
+## Run the app
+
+- `mimosa watch -s` (development)
+- `mimosa watch -os` or `mimosa build` (optimized build)
+
+Launch app at http://localhost:3000/.

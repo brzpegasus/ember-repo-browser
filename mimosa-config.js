@@ -13,7 +13,12 @@ exports.config = {
     'bower'
   ],
 
+  es6Modules: {
+    exclude: [/[/\\]vendor[/\\]/, /[/\\](main|almond)[\.-]/]
+  },
+
   jshint: {
+    exclude: ['javascripts/almond.js'],
     rules: {
       esnext: true
     }

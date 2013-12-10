@@ -3,6 +3,7 @@
 */
 import Ember from 'ember';
 import Router from 'app/router';
+import Resolver from 'app/resolver';
 
 /* Components */
 import SearchFieldComponent from 'app/components/search_field_component';
@@ -26,12 +27,8 @@ var App = Ember.Application.extend({
   LOG_TRANSITIONS_INTERNAL: true,
   LOG_VIEW_LOOKUPS: true,
   Router: Router,
-  SearchFieldComponent: SearchFieldComponent,
-  IndexRoute: IndexRoute,
-  RepositoriesRoute: RepositoriesRoute,
-  BrowserController: BrowserController,
-  RepositoriesController: RepositoriesController,
-  Repository: Repository
+  Resolver: Resolver,
+  modulePrefix: 'app'
 });
 
 export default App;

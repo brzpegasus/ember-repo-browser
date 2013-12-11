@@ -8,6 +8,7 @@
 */
 import Ember from 'ember';
 import templates from 'templates';
+import modules from 'modules';
 
 var get = Ember.get,
     decamelize = Ember.String.decamelize,

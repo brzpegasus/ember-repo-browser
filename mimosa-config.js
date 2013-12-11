@@ -14,7 +14,7 @@ exports.config = {
   ],
 
   es6Modules: {
-    exclude: [/[/\\]vendor[/\\]/, /[/\\](main|almond)[\.-]/]
+    exclude: [/[/\\]vendor[/\\]/, /[/\\](main|almond|modules)[\.-]/]
   },
 
   jshint: {

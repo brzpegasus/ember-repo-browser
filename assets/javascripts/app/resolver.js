@@ -1,10 +1,9 @@
 /**
-  An extension of Ember's DefaultResolver. This will attempt to go through
-  the default mechanism first to resolve objects (i.e. Ember.TEMPLATES for templates
-  and the Application namespace for everything else), and then through the given
-  templates hash and AMD module registry.
+  An extension of Ember's DefaultResolver.
 
-  When those are missing, Ember will generate its own controllers, routes, views, etc.
+  Mimosa already compiles templates into `Ember.TEMPLATES`, so we just need to load
+  the `templates` module and leave the rest to Ember's DefaultResolver#resolveTemplate.
+  Other objects are resolved through the AMD module registry.
 */
 import Ember from 'ember';
 import templates from 'templates';
@@ -24,18 +23,6 @@ var get = Ember.get,
     };
 
 var Resolver = Ember.DefaultResolver.extend({
-  /**
-    Look up the template in Ember.TEMPLATES (the default). If not found there, look in
-    the 'templates' dependency object instead.
-  */
-  resolveTemplate: function(parsedName) {
-    var resolvedTemplate = this._super(parsedName);
-    if (!resolvedTemplate) {
-      resolvedTemplate = templates[parsedName.fullNameWithoutType];
-    }
-    return resolvedTemplate;
-  },
-
   /**
     Convert the string name of the form "type:name" to an object with the
     parsed aspects of the name broken out.

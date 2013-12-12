@@ -10,13 +10,16 @@ exports.config = {
     'minify-js',
     'minify-css',
     'live-reload',
-    'bower'
+    'bower',
+    'testem-require'
   ],
 
+  // https://github.com/dbashford/mimosa-es6-module-transpiler
   es6Modules: {
     exclude: [/[/\\]vendor[/\\]/, /[/\\](main|almond|modules)[\.-]/]
   },
 
+  // https://github.com/dbashford/mimosa-jshint
   jshint: {
     exclude: ['javascripts/almond.js'],
     rules: {
@@ -53,8 +56,12 @@ exports.config = {
     }
   },
 
-  /* Vendor dependency management through Bower */
+  // https://github.com/dbashford/mimosa-bower
   bower: {
     copy: { strategy: 'vendorRoot' }
+  },
+
+  testemRequire: {
+    executeDuringWatch: false // phantomjs is too slow on windows
   }
 }

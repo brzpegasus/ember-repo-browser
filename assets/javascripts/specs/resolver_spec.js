@@ -1,8 +1,6 @@
 import Ember from 'ember';
 import helper from 'specs/helper';
 
-// TODO add tests for nested routes/controllers, etc.
-
 describe("Ember's custom resolver", function() {
   var app, locator;
 
@@ -17,6 +15,10 @@ describe("Ember's custom resolver", function() {
 
   it("can look up top-level templates", function() {
     should.exist(locator.lookup('template:application'));
+  });
+
+  it("can look up nested templates", function() {
+    should.exist(locator.lookup('template:browser.index'));
   });
 
   it("can look up component templates", function() {

@@ -3,8 +3,9 @@
 
   This represents a single GitHub repo.
 */
-import $ from 'jquery';
 import Ember from 'ember';
+
+var $ = Ember.$;
 
 // Just a plain old Ember.Object since we're not using Ember Data
 var Repository = Ember.Object.extend({});

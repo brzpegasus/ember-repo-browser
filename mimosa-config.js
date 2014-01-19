@@ -1,25 +1,29 @@
 exports.config = {
-  minMimosaVersion: '1.2.2',
 
   modules: [
+    'ember-handlebars',
     'es6-module-transpiler',
+    'less',
+    'copy',
     'jshint',
     'csslint',
-    'server',
-    'require',
     'minify-js',
     'minify-css',
+    'require',
+    'server',
     'live-reload',
     'bower',
     'testem-require'
   ],
 
-  // https://github.com/dbashford/mimosa-es6-module-transpiler
+  emberHandlebars: {
+    emberPath: 'ember' // requirejs alias for vendor/ember
+  },
+
   es6Modules: {
     exclude: [/[/\\]vendor[/\\]/, /[/\\](main|almond|modules)[\.-]/]
   },
 
-  // https://github.com/dbashford/mimosa-jshint
   jshint: {
     exclude: ['javascripts/almond.js'],
     rules: {
@@ -27,25 +31,13 @@ exports.config = {
     }
   },
 
-  /* Template compilation */
   template: {
-    // Strip out 'templates' when mapping file paths to template names
-    nameTransform: /.*\/templates\//,
-    // Use Ember version of Handlebars
-    handlebars: {
-      ember: { enabled: true, path: 'ember' }
-    }
+    // Strip out '*/templates/' when mapping file paths to template names
+    nameTransform: /.*\/templates\//
   },
 
-  /* Compiler version overrides */
-  compilers: {
-    libs: {
-      handlebars: require('handlebars')
-    }
-  },
-
-  /* Use Mimosa's Express server to serve the app */
   server: {
+    // Use Mimosa's embedded Express server to serve the app
     defaultServer: {
       enabled: true,
       onePager: true
@@ -56,12 +48,11 @@ exports.config = {
     }
   },
 
-  // https://github.com/dbashford/mimosa-bower
   bower: {
     copy: { strategy: 'vendorRoot' }
   },
 
   testemRequire: {
-    executeDuringWatch: false // phantomjs is too slow on windows
+    executeDuringWatch: false
   }
 }

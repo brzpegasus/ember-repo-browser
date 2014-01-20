@@ -12,8 +12,7 @@ exports.config = {
     'require',
     'server',
     'live-reload',
-    'bower',
-    'testem-require'
+    'bower'
   ],
 
   emberHandlebars: {
@@ -50,9 +49,5 @@ exports.config = {
 
   bower: {
     copy: { strategy: 'vendorRoot' }
-  },
-
-  testemRequire: {
-    executeDuringWatch: false
   }
 }

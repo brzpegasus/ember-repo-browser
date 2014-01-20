@@ -20,7 +20,7 @@ exports.config = {
   },
 
   es6Modules: {
-    exclude: [/[/\\]vendor[/\\]/, /[/\\](main|almond|modules)[\.-]/]
+    exclude: [/[/\\]vendor[/\\]/, /[/\\](main|test_main|almond|modules|tests)[\.-]/]
   },
 
   jshint: {

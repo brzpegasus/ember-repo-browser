@@ -30,7 +30,7 @@ $ npm install
 
 Launch app at `http://localhost:3000/`.
 
-## Testing
+## Testing (WIP)
 
-- Install [PhantomJS](http://phantomjs.org/). See [mimosa-testem-require](https://github.com/dbashford/mimosa-testem-require#usage). Tests are run via PhantomJS after `mimosa build` and during `mimosa watch`.
-- Install [Testem](https://github.com/airportyh/testem) (`npm install -g testem`), then run `./test.sh` or `test.bat` to execute the tests in the browser.
+- Test runner: `public/runner.html`
+- Need integration with testem

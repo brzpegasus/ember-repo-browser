@@ -1,16 +1,11 @@
 import Ember from 'ember';
-import helper from 'specs/helper';
+import App from 'tests/app';
 
 describe("Ember's custom resolver", function() {
-  var app, locator;
+  var locator;
 
   before(function() {
-    app = helper.createApp();
-    locator = app.__container__;
-  });
-
-  after(function() {
-    Ember.run(app, 'destroy');
+    locator = App.__container__;
   });
 
   it("can look up top-level templates", function() {

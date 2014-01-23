@@ -1,4 +1,5 @@
 exports.config = {
+  mimMimosaVersion: '2.0.0',
 
   modules: [
     'ember-handlebars',

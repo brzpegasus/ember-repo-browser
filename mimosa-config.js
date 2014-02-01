@@ -1,5 +1,5 @@
 exports.config = {
-  mimMimosaVersion: '2.0.0',
+  minMimosaVersion: '2.0.0',
 
   modules: [
     'handlebars-on-window',

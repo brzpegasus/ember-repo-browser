@@ -2,6 +2,7 @@ exports.config = {
   mimMimosaVersion: '2.0.0',
 
   modules: [
+    'handlebars-on-window',
     'ember-handlebars',
     'es6-module-transpiler',
     'less',

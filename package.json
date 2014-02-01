@@ -1,0 +1,25 @@
+{
+  "name": "ember-repo-browser",
+  "version": "0.1.0",
+  "homepage": "https://github.com/brzpegasus/ember-repo-browser",
+  "author": "Estelle DeBlois",
+  "description": "",
+  "contributors": [
+    {
+      "name": "Estelle DeBlois",
+      "email": "edeblois@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brzpegasus/ember-repo-browser"
+  },
+  "dependencies": {
+    "mimosa-require-deps": "git://github.com/brzpegasus/mimosa-require-deps.git"
+  },
+  "license": "MIT",
+  "main": "./src",
+  "engines": {
+    "node": ">=0.10"
+  }
+}

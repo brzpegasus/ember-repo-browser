@@ -11,6 +11,7 @@ exports.config = {
     'csslint',
     'minify-js',
     'minify-css',
+    'require-deps',
     'require',
     'server',
     'live-reload',
@@ -51,5 +52,12 @@ exports.config = {
 
   bower: {
     copy: { strategy: 'vendorRoot' }
+  },
+
+  requireDeps: {
+    deps: {
+      'modules.js': /[\/\\](components|controllers|models|routes|views)[\/\\]/,
+      'tests.js': /tests[\/\\](unit|integration)[\/\\]/
+    }
   }
 }

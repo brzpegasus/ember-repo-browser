@@ -11,11 +11,11 @@ exports.config = {
     'csslint',
     'minify-js',
     'minify-css',
-    'require-deps',
     'require',
     'server',
     'live-reload',
-    'bower'
+    'bower',
+    'dependency-bundler'
   ],
 
   emberHandlebars: {
@@ -54,10 +54,16 @@ exports.config = {
     copy: { strategy: 'vendorRoot' }
   },
 
-  requireDeps: {
-    deps: {
-      'modules.js': /[\/\\](components|controllers|models|routes|views)[\/\\]/,
-      'tests.js': /tests[\/\\](unit|integration)[\/\\]/
-    }
+  dependencyBundler: {
+    bundles: [
+      {
+        name: 'modules.js',
+        dependencies: ['/components/', '/controllers/', '/models/', '/routes/', '/views/']
+      },
+      {
+        name: 'tests.js',
+        dependencies: ['/tests/unit/', '/tests/integration/']
+      }
+    ]
   }
 }

@@ -56,14 +56,8 @@ exports.config = {
 
   dependencyBundler: {
     bundles: [
-      {
-        name: 'modules.js',
-        dependencies: ['/components/', '/controllers/', '/models/', '/routes/', '/views/']
-      },
-      {
-        name: 'tests.js',
-        dependencies: ['/tests/unit/', '/tests/integration/']
-      }
+      { name: 'modules.js', dependencies: [(/\/(components|controllers|models|routes|views)\//)] },
+      { name: 'tests.js', dependencies: ['/tests/unit/', '/tests/integration/'] }
     ]
   }
 }

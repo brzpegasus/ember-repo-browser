@@ -1,0 +1,10 @@
+{
+  "test_page": "public/tests.html",
+  "launch_in_dev": [
+    "Firefox",
+    "Chrome"
+  ],
+  "launch_in_ci": [
+    "PhantomJS"
+  ]
+}

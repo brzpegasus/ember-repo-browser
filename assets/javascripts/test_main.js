@@ -17,9 +17,7 @@ requirejs.config({
   }
 });
 
-require(['jquery', 'tests', 'tests/app'], function($) {
-  should = chai.should();
-
+require(['jquery', 'tests'], function($) {
   // Ember app initializers only run when the DOM is ready,
   // so don't start mocha too soon.
   $(document).ready(function() {

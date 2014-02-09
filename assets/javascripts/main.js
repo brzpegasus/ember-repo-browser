@@ -1,6 +1,3 @@
-/*
-  RequireJS configuration.
-*/
 requirejs.config({
   urlArgs: 'b=' + ((new Date()).getTime()),
   shim: {

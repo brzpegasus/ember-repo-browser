@@ -16,9 +16,11 @@ _This is mostly an experimentation ground for various features._
 
 Install [Mimosa](https://github.com/dbashford/mimosa):
 
-```
-npm install -g mimosa
-```
+_Install the latest from GitHub rather than NPM, until 2.1 is released (should be anytime this week now)_
+
+1. Clone https://github.com/dbashford/mimosa
+1. `cd mimosa`
+1. `npm install -g`
 
 ## Run the App
 

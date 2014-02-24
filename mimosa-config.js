@@ -11,11 +11,11 @@ exports.config = {
     'csslint',
     'minify-js',
     'minify-css',
+    'dependency-bundler',
     'require',
     'server',
     'live-reload',
-    'bower',
-    'dependency-bundler'
+    'bower'
   ],
 
   emberHandlebars: {

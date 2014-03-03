@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import Adapter from 'adapter';
+import 'adapter';
 import Application from 'app/app';
 
 Ember.Test.adapter = Ember.Test.MochaAdapter.create();

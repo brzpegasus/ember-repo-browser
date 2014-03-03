@@ -6,10 +6,8 @@
 */
 import Ember from 'ember';
 
-var IndexRoute = Ember.Route.extend({
+export default Ember.Route.extend({
   redirect: function() {
     this.transitionTo('browser');
   }
 });
-
-export default IndexRoute;

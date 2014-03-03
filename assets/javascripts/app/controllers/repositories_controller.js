@@ -6,8 +6,6 @@
 */
 import Ember from 'ember';
 
-var RepositoriesController = Ember.ArrayController.extend({
+export default Ember.ArrayController.extend({
   // Add filtering/sorting and such here
 });
-
-export default RepositoriesController;

@@ -6,7 +6,7 @@
 import Ember from 'ember';
 import Repository from 'app/models/repository';
 
-var BrowserController = Ember.ObjectController.extend({
+export default Ember.ObjectController.extend({
   searchTerm: '',
 
   actions: {
@@ -16,5 +16,3 @@ var BrowserController = Ember.ObjectController.extend({
     }
   }
 });
-
-export default BrowserController;

@@ -7,7 +7,7 @@
 import Ember from 'ember';
 import Repository from 'app/models/repository';
 
-var RepositoriesRoute = Ember.Route.extend({
+export default Ember.Route.extend({
   /**
     The model hook ensures that when users hit the URL '/repos/:name',
     the records corresponding to that name are fetched. Note that this
@@ -34,4 +34,3 @@ var RepositoriesRoute = Ember.Route.extend({
   }
 });
 
-export default RepositoriesRoute;

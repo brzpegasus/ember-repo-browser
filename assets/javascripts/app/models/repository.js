@@ -5,8 +5,6 @@
 */
 import Ember from 'ember';
 
-var $ = Ember.$;
-
 // Just a plain old Ember.Object since we're not using Ember Data
 var Repository = Ember.Object.extend({});
 
@@ -21,7 +19,7 @@ Repository.reopenClass({
     var url = 'https://api.github.com/search/repositories',
         data = { 'q': name + '+in:name' };
 
-    return $.getJSON(url, data).then(function(response) {
+    return Ember.$.getJSON(url, data).then(function(response) {
       var records = response.items.map(function(item) {
         return Repository.create(item);
       });

@@ -5,7 +5,7 @@
 */
 import Ember from 'ember';
 
-var SearchFieldComponent = Ember.Component.extend({
+export default Ember.Component.extend({
   tagName: 'form',
   classNames: ['navbar-form'],
 
@@ -23,5 +23,3 @@ var SearchFieldComponent = Ember.Component.extend({
     }
   }
 });
-
-export default SearchFieldComponent;

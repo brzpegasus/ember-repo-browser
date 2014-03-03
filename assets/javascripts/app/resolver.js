@@ -7,7 +7,7 @@
 */
 import Ember from 'ember';
 import templates from 'templates';
-import modules from 'modules';
+import 'modules';
 
 var get = Ember.get,
     decamelize = Ember.String.decamelize,
@@ -56,6 +56,9 @@ var Resolver = Ember.DefaultResolver.extend({
       if (isModuleDefined(moduleName)) {
         try {
           factory = require(moduleName);
+          if (factory) {
+            factory = factory['default'] || factory;
+          }
         } catch (e) {
           console.warn('Cannot load module ' + moduleName + '.');
         }

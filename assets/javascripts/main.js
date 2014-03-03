@@ -20,5 +20,5 @@ require(['app/app'], function(App) {
   // Create an instance of the Ember app and expose it globally, mostly because
   // it's convenient at runtime for looking things up through the console, e.g.:
   // `App.__container__.lookup('model:foo')`
-  window.App = App.create();
+  window.App = App['default'].create();
 });

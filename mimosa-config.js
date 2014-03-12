@@ -5,7 +5,6 @@ exports.config = {
     'handlebars-on-window',
     'ember-handlebars',
     'es6-module-transpiler',
-    'es6-module-transpiler-amd-shim',
     'less',
     'copy',
     'jshint',
